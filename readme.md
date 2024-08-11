@@ -1,5 +1,5 @@
 
-# Random Algorithms and Data Structures
+# Univariate random generator
 
 This project offers a comprehensive collection of algorithms and data structures for generating random variables and various combinatorial objects, including random partitions, subsets, Dyck words, Young tableaux, and binary trees. Each function is meticulously optimized for performance, with its corresponding time complexity clearly documented.
 
@@ -8,7 +8,6 @@ To ensure the uniformity and correctness of the generated random objects, the ac
 ## Table of Contents
 
 - [Installation](#installation)
-- [Usage](#usage)
 - [Functions and Complexities](#functions-and-complexities)
   - [Random Number Generation](#random-number-generation)
   - [Combinatorial Algorithms](#combinatorial-algorithms)
@@ -59,6 +58,9 @@ Currently, the following random variables are implemented:
 | `uniform_circle(r)`         | O(1)               |
 
 
+![random_variables](https://github.com/user-attachments/assets/ec5125ea-5cb4-4f15-b19c-c945f81f3a52)
+
+
 
 ### Combinatorial Algorithms
 
@@ -81,6 +83,13 @@ The package also provides functionality for the following random combinatorial o
 | `random_dyck_word(n)`               | O(n) (preprocessing: O(n^2))                    |
 | `dyck_word_to_tree(word)`           | O(n)                                            |
 | `random_binary_tree(n)`             | O(n) (preprocessing: O(n^2))                    |
+
+
+For example, here is the result of producing random Young tableaux of size $n=5$.
+
+<img width="389" alt="Screenshot 2024-08-11 at 10 52 26 AM" src="https://github.com/user-attachments/assets/1b6e7a25-521d-46b3-9f77-2805138f0366">
+
+
 
 ## Examples
 

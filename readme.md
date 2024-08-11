@@ -21,13 +21,13 @@ To ensure the uniformity and correctness of the generated random objects, the ac
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/FrederikBenirschke/univariate-random-generator.git
+   git clone https://github.com/FrederikBenirschke/UnivariateRandomGenerator.git
    ```
 
 2. **Navigate to the project directory**:
 
    ```bash
-   cd random-algorithms
+   cd univariaterandomgenerator
    ```
 
 3. **Install the required dependencies**:
@@ -57,6 +57,8 @@ Currently, the following random variables are implemented:
 | `chi_squared(k)`            | O(k)               |
 | `uniform_disk(r)`           | O(1)               |
 | `uniform_circle(r)`         | O(1)               |
+
+
 
 ### Combinatorial Algorithms
 

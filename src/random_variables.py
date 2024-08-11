@@ -80,7 +80,7 @@ def poisson(exp_lambda: float) -> int:
 
     return counter
 
-def ber(p: float) -> bool:
+def bernoulli(p: float) -> bool:
     """
     Generates a Bernoulli random variable. Runtime is O(1).
 
@@ -92,7 +92,7 @@ def ber(p: float) -> bool:
     """
     return uniform_int(0, 1) < p
 
-def binom(n: int, p: float = 0.5) -> int:
+def binomial(n: int, p: float = 0.5) -> int:
     """
     Generates a random number following a binomial distribution. Runtime is O(n).
 
@@ -103,9 +103,9 @@ def binom(n: int, p: float = 0.5) -> int:
     Returns:
     int: A random number drawn from the binomial distribution with n trials and probability p.
     """
-    return sum(ber(p) for _ in range(n))
+    return sum(bernoulli(p) for _ in range(n))
 
-def geom(p: float) -> int:
+def geometric(p: float) -> int:
     """
     Generates a random number following a geometric distribution. Runtime is O(1).
 
@@ -118,7 +118,7 @@ def geom(p: float) -> int:
     exp_lambda = -math.log(1 - p)
     return math.floor(exponential(exp_lambda))
 
-def chi(k: int) -> float:
+def chi_square(k: int) -> float:
     """
     Calculates the value of the chi-squared distribution. Runetime is O(k).
 

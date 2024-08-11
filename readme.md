@@ -39,8 +39,11 @@ To ensure the uniformity and correctness of the generated random objects, the ac
 
 Currently, the following random variables are implemented:
 
-- Uniform, Normal, Exponential, Poisson, Bernoulli, Binomial, Geometric, \(	ext{Chi}^2\), Uniform distribution on the disk, and the circle.
+- Uniform, Normal, Exponential, Poisson, Bernoulli, Binomial, Geometric, $\text{Chi}^2$, Uniform distribution on the disk, and the circle.
 
+As input we use the random uniform generator `random.uniform()` from Python to produce random uniform real numbers between $0$ and $1$.
+  All other random variables are generated from this using a variety of techniques, inverse sampling, rejection sampling, Box-Muller transform. For the time complexity we assume  `random.uniform()` has constant runtime.
+ 
 ### Random Number Generation
 
 | Function                    | Runtime Complexity |
@@ -48,7 +51,7 @@ Currently, the following random variables are implemented:
 | `uniform(a, b)`             | O(1)               |
 | `uniform_int(a, b)`         | O(1)               |
 | `normal(mu, sigma)`         | O(1)               |
-| `exponential(exp_lambda)`   | O(1)               |
+| `exponential(lambda)`   | O(1)               |
 | `poisson(lambda)`           | O(lambda)          |
 | `bernoulli(p)`              | O(1)               |
 | `binomial(n, p)`            | O(n)               |
@@ -66,7 +69,7 @@ Currently, the following random variables are implemented:
 
 The package also provides functionality for the following random combinatorial objects:
 
-- Permutations, Subsets, Partitions (ordered, unordered, fixed number of parts), Young tableaux, Dyck words, Binary trees
+- Permutations, Subsets, Partitions (ordered, unordered, fixed number of parts), Young tableaus, Dyck words, Binary trees
 
 | Function                            | Runtime Complexity                              |
 |-------------------------------------|-------------------------------------------------|
@@ -74,18 +77,14 @@ The package also provides functionality for the following random combinatorial o
 | `random_subset(n, k)`               | O(k)                                            |
 | `random_partition_with_parts(n, k)` | O(k log k)                                      |
 | `sample(lst, weights)`              | O(n)                                            |
-| `number_partitions(n, max_part)`    | O(n * max_part)                                 |
 | `random_partition(n, max_part)`     | O(n) (preprocessing: O(n * max_part))           |
 | `random_ordered_partition(n)`       | O(n)                                            |
-| `young_tableaux(partition, sort)`   | O(n)                                            |
 | `random_young_tableaux(n)`          | O(n * max_part)                                 |
-| `number_dyck_words(n)`              | O(n)                                            |
 | `random_dyck_word(n)`               | O(n) (preprocessing: O(n^2))                    |
-| `dyck_word_to_tree(word)`           | O(n)                                            |
 | `random_binary_tree(n)`             | O(n) (preprocessing: O(n^2))                    |
 
 
-For example, here is the result of producing random Young tableaux of size $n=5$.
+For example, here is the result of producing random Young tableaus of size $n=5$.
 
 <img width="389" alt="Screenshot 2024-08-11 at 10 52 26 AM" src="https://github.com/user-attachments/assets/1b6e7a25-521d-46b3-9f77-2805138f0366">
 

@@ -223,7 +223,7 @@ def random_ordered_partition(n):
     # Return the partition as a tuple.
     return tuple(partition)
 
-def young_tableaux(partition, sort=False):
+def young_tableau(partition, sort=False):
     """
     Converts a partition into a Young tableau.
 
@@ -252,7 +252,7 @@ def young_tableaux(partition, sort=False):
     
     return '\n'.join(tableau)
 
-def random_young_tableaux(n):
+def random_young_tableau(n):
     """
     Generates a random Young tableau corresponding to a random partition of n.
 
@@ -266,7 +266,7 @@ def random_young_tableaux(n):
     str
         A string representation of the randomly generated Young tableau.
     """
-    return young_tableaux(random_partition(n))
+    return young_tableau(random_partition(n))
 
 @lru_cache(maxsize=None)
 def number_dyck_words(n):

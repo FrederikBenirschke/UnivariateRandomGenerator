@@ -77,6 +77,8 @@ def random_partition_with_parts(n, k):
 def sample(lst, weights=None):
     """
     Samples an element from a list with given probabilities.
+    Runtime: O(n) (computing cumulative weights) + O(log(n)) (bisect)
+    
 
     Parameters:
     -----------
@@ -89,6 +91,8 @@ def sample(lst, weights=None):
     --------
     element from lst
         A randomly sampled element from the list based on the provided weights.
+
+    TODO:Preprocess the cumulative probabilities.
     """
     if isinstance(lst, int):
         lst = list(range(lst))
@@ -272,6 +276,8 @@ def random_young_tableau(n):
 def number_dyck_words(n):
     """
     Calculates the number of Dyck words of length 2n.
+    The number of Dyck words are the Catalan numbers.
+    Runtime: O(min(k,n-k)) using binomial coefficient from math.comb
 
     A Dyck word is a balanced string of X's and Y's such that in any prefix of the word, the number of X's is at least the number of Y's.
 
@@ -293,6 +299,8 @@ def random_dyck_word(n):
 
     A Dyck word is a balanced string of X's and Y's such that in any prefix of the word, the number of X's is at least the number of Y's.
 
+    Runtime: Preprocesing O(n^2) to compute the product C_k * C_{n-k} for k = 1 to n
+    O(n) afterwards for recursion
     Parameters:
     -----------
     n : int
@@ -302,6 +310,8 @@ def random_dyck_word(n):
     --------
     str
         A randomly generated Dyck word of length 2n.
+
+    TODO: Cache preprocessing
     """
     if n == 0:
         return ""
